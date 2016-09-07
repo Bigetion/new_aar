@@ -1,6 +1,8 @@
 (function() {
   'use strict';
-  App.controller('MainCtrl', ['$scope', function($scope) {
-
-  }]);
+  App.controller('MainCtrl', ['$scope',
+    function($scope) {
+      
+    }
+  ]);
 })()
