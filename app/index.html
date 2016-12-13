@@ -12,19 +12,21 @@
   <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="components/angular-material/angular-material.css" />
   <link rel="stylesheet" href="components/components-font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="components/angular-ui-notification/dist/angular-ui-notification.css" />
+  <link rel="stylesheet" href="components/angular-ui-select/dist/select.css" />
+  <link rel="stylesheet" href="components/select2/select2.css" />
+  <link rel="stylesheet" href="components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" />
   <!-- endbower -->
   <!-- endbuild -->
 
   <!-- build:css(.tmp) styles/main.css -->
   <!--<link rel="stylesheet" href="styles/main.css">-->
   <link rel="stylesheet" href="styles/main.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="styles/select2.css" />
   <!-- endbuild -->
 </head>
 
 <body ng-app="newAarApp">
-
-
-
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -38,10 +40,10 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Help</a></li>
+          <li><a href="" uib-popover-template="'myPopoverTemplate.html'" popover-placement="bottom-right" popover-trigger="'outsideClick'" popover-append-to-body="true">Dashboard</a></li>
+          <li><a href="">Settings</a></li>
+          <li><a href="">Profile</a></li>
+          <li><a href="">Help</a></li>
         </ul>
         <form class="navbar-form navbar-right">
           <input class="form-control" placeholder="Search..." type="text">
@@ -50,6 +52,12 @@
     </div>
   </nav>
 
+  <script type="text/ng-template" id="myPopoverTemplate.html">
+    <div class="form-group">
+      <input type="text" ng-model="abc" class="form-control">
+    </div>
+  </script>
+  
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar">
@@ -94,6 +102,15 @@
   <script src="components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="components/angular-messages/angular-messages.js"></script>
   <script src="components/angular-material/angular-material.js"></script>
+  <script src="components/angular-smart-table/dist/smart-table.js"></script>
+  <script src="components/angular-ui-notification/dist/angular-ui-notification.js"></script>
+  <script src="components/ng-file-upload/ng-file-upload.js"></script>
+  <script src="components/angular-base64-upload/src/angular-base64-upload.js"></script>
+  <script src="components/angular-ui-select/dist/select.js"></script>
+  <script src="components/select2/select2.js"></script>
+  <script src="components/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
+  <script src="components/ng-scrollbars/dist/scrollbars.min.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -103,10 +120,14 @@
   <script src="scripts/root/controllers/mainCtrl.js"></script>
   <script src="scripts/root/controllers/aboutCtrl.js"></script>
   <script src="scripts/root/controllers/contactCtrl.js"></script>
-  
+
   <script src="scripts/root/services/queryService.js"></script>
 
   <script src="scripts/root/services/httpService.js"></script>
+  
+  <script src="scripts/root/directives/onlyDecimals.js"></script>
+  
+  <!--<script src="scripts/root/directives/select2.js"></script>-->
   <!-- endbuild -->
 </body>
 
