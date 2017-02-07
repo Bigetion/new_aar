@@ -10,8 +10,8 @@
     position: relative;
   }
 </style>
-<div ng-scrollbars class="scroller table-responsive" st-safe-src="list.tAnggotaTim.data" st-table="rowCollection">
-  <table class="table table-striped">
+<div st-safe-src="list.tAnggotaTim.data" st-table="rowCollection">
+  <table class="table table-fixed-header">
     <thead>
       <tr>
         <th class="col-md-2" st-sort="id_user">#</th>
@@ -20,15 +20,19 @@
         <th class="col-md-6" st-sort="username">Jabatan</th>
       </tr>
     </thead>
-    <tbody>
-      <tr ng-repeat="row in rowCollection">
-        <td>{{((list.tAnggotaTim.page-1)*10)+$index+1}}</td>
-        <td>{{row.ID_ASESOR}}</td>
-        <td>{{row.ID_SKEMA}}</td>
-        <td>{{row.JABATAN}}</td>
-      </tr>
-    </tbody>
   </table>
+  <div class="scroller table-responsive" m-scrollbars on-scroll-end="infinite()">
+    <table class="table table-fixed-header">
+      <tbody>
+        <tr ng-repeat="row in rowCollection">
+          <td class="col-md-2">{{$index+1}}</td>
+          <td class="col-md-4">{{row.ID_ASESOR}}</td>
+          <td class="col-md-4">{{row.ID_SKEMA}}</td>
+          <td class="col-md-6">{{row.JABATAN}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<ul ng-if="list.tAnggotaTim.data.length > 0" uib-pagination items-per-page="10" total-items="list.tAnggotaTim.totalRecord"
-  ng-model="list.tAnggotaTim.page" ng-change="onChange.tAnggotaTimList()" max-size="5" boundary-link-numbers="true"></ul>
+<!--<ul ng-if="list.tAnggotaTim.data.length > 0" uib-pagination items-per-page="10" total-items="list.tAnggotaTim.totalRecord"
+  ng-model="list.tAnggotaTim.page" ng-change="onChange.tAnggotaTimList()" max-size="5" boundary-link-numbers="true"></ul>-->

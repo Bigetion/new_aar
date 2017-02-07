@@ -196,3 +196,13 @@ body {
   bottom: 0;
   left: 0;
 }
+
+.mCSB_container_wrapper {
+	margin-right: 15px !important;
+	margin-bottom: 15px !important;
+}
+
+.mCSB_container_wrapper > .mCSB_container {
+	padding-right: 5px !important;
+	padding-bottom: 5px !important;
+}

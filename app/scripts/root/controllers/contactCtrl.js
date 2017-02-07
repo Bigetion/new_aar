@@ -17,11 +17,17 @@
               $scope.list.tAnggotaTim.data = response.data
               $scope.list.tAnggotaTim.totalRecord = '' + response.total_record
             })
+          },
+          tAnggotaTimListScroll: function() {
+            $scope.list.tAnggotaTim.page += 1;
+            QueryService.getByOptions('table=t_anggota_tim_asesmen&page='+$scope.list.tAnggotaTim.page+'&page_limit=10').then(function(response) {
+              $scope.list.tAnggotaTim.data = $scope.list.tAnggotaTim.data.concat(response.data);
+            })
           }
         }
 
         $scope.infinite = function(){
-          alert('a');
+          $scope.get.tAnggotaTimListScroll();
         }
 
         $scope.onChange = {
@@ -34,6 +40,22 @@
 
         $scope.changeMe = function() {
           alert('aaa')
+        }
+        
+        $scope.config = {
+          autoResize: false, // If true, will listen for DOM elements being added or removed inside the scroll container
+          direction: 'vertical', // The direction of the scrollbar
+          scrollbar: {  
+              width: 6, // Width (thickness. Is actually height on horizontal scrollbars) of the scrollbar
+              hoverWidth: 8, // Width on scrollbar hover
+              color: 'rgba(0,0,0, .6)', // Background color of the scrollbar
+              show: false // If true, scrollbar will always be visible
+          },
+          scrollbarContainer: {
+              width: 12, // Width of the container surrounding the scrollbar. Becomes visible on hover
+              color: 'rgba(0,0,0, .1)' // Background color of the scrollbar container
+          },
+          scrollTo: null // Scroll to the 'start' or 'end' on initialization and content changes. Pixel values may also be given.
         }
 
         $scope.get.tAnggotaTimList();
