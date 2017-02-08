@@ -1,49 +1,40 @@
 /*  Fonts  */
+
 @font-face {
     font-family: 'Roboto-Regular';
     src: url('fonts/Roboto-Regular.eot');
-    src: url('fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Roboto-Regular.woff') format('woff'),
-         url('fonts/Roboto-Regular.ttf') format('truetype'),
-         url('fonts/Roboto-Regular.svg#RobotoRegular') format('svg');
+    src: url('fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/Roboto-Regular.woff') format('woff'), url('fonts/Roboto-Regular.ttf') format('truetype'), url('fonts/Roboto-Regular.svg#RobotoRegular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
 
 @font-face {
     font-family: 'Roboto-Bold';
     src: url('fonts/Roboto-Bold.eot');
-    src: url('fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Roboto-Bold.woff') format('woff'),
-         url('fonts/Roboto-Bold.ttf') format('truetype'),
-         url('fonts/Roboto-Bold.svg#RobotoBold') format('svg');
+    src: url('fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/Roboto-Bold.woff') format('woff'), url('fonts/Roboto-Bold.ttf') format('truetype'), url('fonts/Roboto-Bold.svg#RobotoBold') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
 
 @font-face {
     font-family: 'Roboto-Medium';
     src: url('fonts/Roboto-Medium.eot');
-    src: url('fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Roboto-Medium.woff') format('woff'),
-         url('fonts/Roboto-Medium.ttf') format('truetype'),
-         url('fonts/Roboto-Medium.svg#RobotoMedium') format('svg');
+    src: url('fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'), url('fonts/Roboto-Medium.woff') format('woff'), url('fonts/Roboto-Medium.ttf') format('truetype'), url('fonts/Roboto-Medium.svg#RobotoMedium') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
+
+
 /*
  * Base structure
  */
 
+
 /* Move down content because we have a fixed navbar that is 50px tall */
+
 body {
-  padding-top: 50px;
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding-top: 50px;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 
@@ -52,57 +43,69 @@ body {
  */
 
 .sub-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
 }
+
 
 /*
  * Top navigation
  * Hide default border to remove 1px line.
  */
+
 .navbar-fixed-top {
-  border: 0;
+    border: 0;
 }
+
 
 /*
  * Sidebar
  */
 
+
 /* Hide for mobile, show later */
+
 .sidebar {
-  display: none;
-}
-@media (min-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 51px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    background-color: #f5f5f5;
-    border-right: 1px solid #eee;
-  }
+    display: none;
 }
 
+@media (min-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 51px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        /* Scrollable contents if viewport is shorter than content. */
+        background-color: #f5f5f5;
+        border-right: 1px solid #eee;
+    }
+}
+
+
 /* Sidebar navigation */
+
 .nav-sidebar {
-  margin-right: -21px; /* 20px padding + 1px border */
-  margin-bottom: 20px;
-  margin-left: -20px;
+    margin-right: -21px;
+    /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
 }
-.nav-sidebar > li > a {
-  padding-right: 20px;
-  padding-left: 20px;
+
+.nav-sidebar>li>a {
+    padding-right: 20px;
+    padding-left: 20px;
 }
-.nav-sidebar > .active > a,
-.nav-sidebar > .active > a:hover,
-.nav-sidebar > .active > a:focus {
-  color: #fff;
-  background-color: #428bca;
+
+.nav-sidebar>.active>a,
+.nav-sidebar>.active>a:hover,
+.nav-sidebar>.active>a:focus {
+    color: #fff;
+    background-color: #428bca;
 }
 
 
@@ -111,16 +114,18 @@ body {
  */
 
 .main {
-  padding: 20px;
+    padding: 20px;
 }
+
 @media (min-width: 768px) {
-  .main {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
+    .main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
 }
+
 .main .page-header {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 
@@ -129,18 +134,21 @@ body {
  */
 
 .placeholders {
-  margin-bottom: 30px;
-  text-align: center;
+    margin-bottom: 30px;
+    text-align: center;
 }
+
 .placeholders h4 {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
+
 .placeholder {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
+
 .placeholder img {
-  display: inline-block;
-  border-radius: 50%;
+    display: inline-block;
+    border-radius: 50%;
 }
 
 .drop-box {
@@ -153,56 +161,78 @@ body {
 }
 
 #dropzone {
-  position: relative;
-  border: 2px dashed #DDD;
-  color: #DDD;
-  font: bold 24px/200px arial;
-  height: 200px;
-  margin: 30px auto;
-  text-align: center;
-  width: 200px;
+    position: relative;
+    border: 2px dashed #DDD;
+    color: #DDD;
+    font: bold 24px/200px arial;
+    height: 200px;
+    margin: 30px auto;
+    text-align: center;
+    width: 200px;
 }
 
 #dropzone.hover {
-  border: 10px solid #FE5;
-  color: #FE5;
+    border: 10px solid #FE5;
+    color: #FE5;
 }
 
 #dropzone.dropped {
-  background: #222;
-  border: 10px solid #444;
+    background: #222;
+    border: 10px solid #444;
 }
 
 #dropzone div {
-  position: relative;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 #dropzone img {
-  vertical-align: middle;
-  max-width: 95%;
-  max-height: 95%;
+    vertical-align: middle;
+    max-width: 95%;
+    max-height: 95%;
 }
 
 #dropzone [type="file"] {
-  cursor: pointer;
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .mCSB_container_wrapper {
-	margin-right: 15px !important;
-	margin-bottom: 15px !important;
+    margin-right: 15px !important;
+    margin-bottom: 15px !important;
 }
 
-.mCSB_container_wrapper > .mCSB_container {
-	padding-right: 5px !important;
-	padding-bottom: 5px !important;
+.mCSB_container_wrapper>.mCSB_container {
+    padding-right: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.scroller {
+    height: 300px;
+    overflow-y: hidden;
+    position: relative;
+    border: 1px solid #ebebeb;
+}
+
+#tableHead {
+    position: relative;
+    margin-bottom: 0px !important;
+}
+
+.table-fixed-header {}
+
+.table-fixed-header thead {
+    position: relative;
+    background: #ebebeb;
+    background: -moz-linear-gradient(top, #ffffff 0%, #ebebeb 51%, #ebebeb 100%);
+    background: -webkit-linear-gradient(top, #ffffff 0%, #ebebeb 51%, #ebebeb 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #ebebeb 51%, #ebebeb 100%);
 }
