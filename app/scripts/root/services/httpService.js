@@ -7,9 +7,7 @@
                     var deferred = $q.defer();
 
                     var extendData = {};
-                    if ($rootScope.jwt || $cookies.get('token')) {
-                        extendData.jwt = $rootScope.jwt || $cookies.get('token');
-                    }
+                    extendData.jwt = $cookies.get('token');
                     data = angular.extend(data, extendData);
 
                     $http({

@@ -43,7 +43,6 @@
                             success: response.success_message
                         }
                         if (response.success_message) {
-                            _this.$rootScope.jwt = response.jwt;
                             _this.$cookies.put('token', response.jwt);
                             _this.$location.path('/');
                         }
