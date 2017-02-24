@@ -14,21 +14,19 @@ var App = angular
         'ngScrollbars',
         'ngLodash',
         'ngStorage',
-        'perfect_scrollbar'
+        'perfect_scrollbar',
+        'classy',
+        'newAarApp.config',
+        'ngCookies'
     ])
-    .config(function(ScrollBarsProvider) {
-        // the following settings are defined for all scrollbars unless the
-        // scrollbar has local scope configuration
-        ScrollBarsProvider.defaults = {
-            scrollButtons: {
-                scrollAmount: 'auto', // scroll amount when button pressed
-                enable: true // enable scrolling buttons by default
-            },
-            scrollInertia: 400, // adjust however you want
-            axis: 'yx', // enable 2 axis scrollbars by default,
-            theme: '3d-thick-dark',
-            autoHideScrollbar: false
-        };
-
+    .config(function() {
         PDFJS.workerSrc = 'root/factories/pdfjs/build/pdf.worker.js';
-    });
+    }).run(['$rootScope', '$state', function($rootScope, $state) {
+        $rootScope.$on('$stateChangeStart', function(event, toState) {
+            $rootScope.currentState = $state.current.name;
+        });
+        $rootScope.$on('$stateChangeSuccess', function(event, toState) {
+            $rootScope.currentState = $state.current.name;
+        });
+
+    }])

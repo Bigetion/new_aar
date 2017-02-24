@@ -155,16 +155,13 @@
                     var tElement = angular.element($elem);
 
                     var getTHeadWidth = function() {
-                        tHead.css({ 'width': tBody[0].clientWidth });
+                        tHead.css({ 'width': tBody[0].clientWidth + 1 });
 
                         var tElementHeight = tElement[0].clientHeight;
                         var tHeadHeight = tHead[0].clientHeight;
-                        tBody.css({ 'height': tElementHeight - tHeadHeight + 'px' });
+                        tBody.css({ 'max-height': tElementHeight - tHeadHeight + 'px' });
 
                         var tHeadTr = angular.element(tHead.querySelectorAll('tr'));
-                        // angular.forEach(tHeadTr[0].cells, function(cell) {
-                        //     console.log(cell.clientWidth);
-                        // });
 
                         var getTBodyTr = function() {
                             var tBodyTr = angular.element(tBody.querySelectorAll('tr'));
@@ -188,9 +185,8 @@
                         var yHeight = tElement[0].scrollHeight;
 
                         tBody = angular.element($elem.querySelectorAll('#tableBody'));
-                        tHead.css({ 'top': yTop, 'position': 'relative', 'width': tBody[0].clientWidth });
+                        tHead.css({ 'top': yTop, 'position': 'relative', 'width': tBody[0].clientWidth + 1 });
 
-                        console.log(yHeight + '-' + yTopOffset);
                         if (yTopOffset >= yHeight && !isInfinite) {
                             isInfinite = true;
                             $scope.$apply($parse($attr.infiniteScroll));
@@ -214,6 +210,7 @@
                                 })
                             });
                             getInfinite();
+                            getTHeadWidth();
                         });
                     });
 

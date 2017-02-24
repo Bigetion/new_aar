@@ -30,7 +30,9 @@
     "ngstorage": "^0.3.11",
     "perfect-scrollbar": "^0.6.16",
     "ng-scrollbar": "^0.0.8",
-    "angular-perfect-scrollbar": "^0.0.4"
+    "angular-perfect-scrollbar": "^0.0.4",
+    "metisMenu": "metismenu#^2.6.2",
+    "angular-classy": "^1.2.4"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0",
