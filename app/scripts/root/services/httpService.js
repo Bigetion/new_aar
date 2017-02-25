@@ -7,16 +7,23 @@
                     var deferred = $q.defer();
 
                     var extendData = {};
-                    extendData.jwt = $cookies.get('token');
+                    var token = $cookies.get('token');
+
+                    var headers = {
+                        'Accept': 'application/json'
+                    }
+
+                    if (token) {
+                        extendData.jwt = token;
+                        headers['Authorization'] = 'Bearer ' + token;
+                    }
                     data = angular.extend(data, extendData);
 
                     $http({
                         url: url,
                         method: "POST",
                         data: data,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
+                        headers: headers
                     }).then(function(response) {
                         deferred.resolve(response.data);
 
@@ -40,8 +47,15 @@
                     var deferred = $q.defer();
 
                     var extendData = {};
-                    if ($rootScope.jwt || $cookies.get('token')) {
-                        extendData.jwt = $rootScope.jwt || $cookies.get('token');
+                    var token = $cookies.get('token');
+
+                    var headers = {
+                        'Accept': 'application/json'
+                    }
+
+                    if (token) {
+                        extendData.jwt = token;
+                        headers['Authorization'] = 'Bearer ' + token;
                     }
                     data = angular.extend(data, extendData);
 
@@ -49,9 +63,7 @@
                         url: url,
                         method: "POST",
                         data: data,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
+                        headers: headers
                     }).then(function(response) {
                         deferred.resolve(response.data);
 
