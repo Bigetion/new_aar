@@ -1356,3 +1356,7 @@ md-checkbox {
 .navbar-logout .icon-bar {
     display: none;
 }
+
+#loading-bar .bar {
+    background: #FED931;
+}

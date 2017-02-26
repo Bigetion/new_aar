@@ -77,7 +77,7 @@
                             okFunction: deleteRow
                         });
                     }
-                };
+                }
             },
             onSubmit: function() {
                 var _this = this;

@@ -17,7 +17,9 @@ var App = angular
         'perfect_scrollbar',
         'classy',
         'newAarApp.config',
-        'ngCookies'
+        'ngCookies',
+        'ngSanitize',
+        'angular-loading-bar'
     ])
     .config(function() {
         PDFJS.workerSrc = 'root/factories/pdfjs/build/pdf.worker.js';
