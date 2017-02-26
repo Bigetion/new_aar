@@ -4,5 +4,4 @@
 /.sass-cache
 /bower_components
 /.history
-.history
-app/components
+/app/components
