@@ -814,7 +814,7 @@ table.dataTable thead .sorting:after {
 .page-header {
     padding-bottom: 9px;
     margin: 10px 0 20px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px dashed #222D32 !important;
 }
 
 

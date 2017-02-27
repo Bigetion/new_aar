@@ -113,10 +113,6 @@
             onChange: function() {
                 var _this = this;
                 return {};
-            },
-            _get: function() {
-                var _this = this;
-                return {};
             }
         }
     });
