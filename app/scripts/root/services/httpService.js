@@ -14,10 +14,10 @@
                     }
 
                     if (token) {
-                        extendData.jwt = token;
+                        // extendData.jwt = token;
                         headers['Authorization'] = 'Bearer ' + token;
                     }
-                    data = angular.extend(data, extendData);
+                    data = angular.extend(extendData, data);
 
                     $http({
                         url: url,
@@ -54,10 +54,10 @@
                     }
 
                     if (token) {
-                        extendData.jwt = token;
+                        // extendData.jwt = token;
                         headers['Authorization'] = 'Bearer ' + token;
                     }
-                    data = angular.extend(data, extendData);
+                    data = angular.extend(extendData, data);
 
                     $http({
                         url: url,

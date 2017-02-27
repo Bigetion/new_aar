@@ -64,10 +64,6 @@
                             _this.var.permissionList = response;
                             _this.var.roleList = roleList;
                         });
-                    },
-                    checkExist: function(idRole, path) {
-                        var permissionListByRole = _this.lodash.filter(_this.var.permissionList.data, { id_role: idRole });
-                        console.log(permissionListByRole);
                     }
                 };
             },
@@ -88,7 +84,7 @@
                             permissions[key] = permissions[key].join('---');
                         });
                         _this.PermissionService.updatePermissions(permissions).then(function(response) {
-                            console.log(response);
+                            // console.log(response);
                         });
                     }
                 };
