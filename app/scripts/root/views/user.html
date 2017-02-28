@@ -3,10 +3,10 @@
     <table id="tableHead" class="table table-striped panel">
         <thead>
             <tr>
-                <th class="col-md-1" st-sort="id_user">#</th>
+                <th class="col-md-1">#</th>
                 <th class="col-md-3" st-sort="username">User Name</th>
-                <th class="col-md-6" st-sort="username">Role Type</th>
-                <th class="col-md-2" st-sort="username">Action</th>
+                <th class="col-md-6" st-sort="role_name">Role Type</th>
+                <th class="col-md-2">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -14,7 +14,7 @@
                 <td>{{$index+1}}</td>
                 <td>{{row.username}}</td>
                 <td>{{row.role_name}}</td>
-                <td>-</td>
+                <td><a ng-if="var.idRole==row.id_role && row.id_role!=2" class="btn btn-link"><i class="fa fa-key"></i></a></td>
             </tr>
         </tbody>
     </table>

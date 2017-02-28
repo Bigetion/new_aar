@@ -87,6 +87,7 @@
                             _this.RoleService.submitAdd(_this.var.input).then(function(response) {
                                 if (response.success_message) {
                                     _this.collection.roleList.data.push({
+                                        id_role: response.id,
                                         role_name: _this.var.input.roleName,
                                         description: _this.var.input.description
                                     });
