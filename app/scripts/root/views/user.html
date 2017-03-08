@@ -1,21 +1,23 @@
-<h1 class="page-header ng-scope">Users</h1>
-<div st-safe-src="collection.userList.data" st-table="rowCollection" ng-hide="state.isAdd || state.isEdit">
-    <table id="tableHead" class="table table-striped panel">
-        <thead>
-            <tr>
-                <th class="col-md-1">#</th>
-                <th class="col-md-3" st-sort="username">User Name</th>
-                <th class="col-md-6" st-sort="role_name">Role Type</th>
-                <th class="col-md-2">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="row in rowCollection">
-                <td>{{$index+1}}</td>
-                <td>{{row.username}}</td>
-                <td>{{row.role_name}}</td>
-                <td><a ng-if="var.idRole==row.id_role && row.id_role!=2" class="btn btn-link"><i class="fa fa-key"></i></a></td>
-            </tr>
-        </tbody>
-    </table>
+<div class="col-md-12">
+    <h1 class="page-header ng-scope">Users</h1>
+    <div st-safe-src="collection.userList.data" st-table="rowCollection" ng-hide="state.isAdd || state.isEdit">
+        <table id="tableHead" class="table table-striped panel">
+            <thead>
+                <tr>
+                    <th class="col-md-1">#</th>
+                    <th class="col-md-3" st-sort="username">User Name</th>
+                    <th class="col-md-6" st-sort="role_name">Role Type</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in rowCollection">
+                    <td>{{$index+1}}</td>
+                    <td>{{row.username}}</td>
+                    <td>{{row.role_name}}</td>
+                    <td><a ng-if="var.idRole==row.id_role && row.id_role!=2" class="btn btn-link"><i class="fa fa-key"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

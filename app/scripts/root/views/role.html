@@ -1,72 +1,74 @@
-<h1 class="page-header ng-scope">Roles</h1>
-<div st-safe-src="collection.roleList.data" st-table="rowCollection" ng-hide="state.isAdd || state.isEdit">
-    <table id="tableHead" class="table table-striped panel">
-        <thead>
-            <tr>
-                <th class="col-md-1">#</th>
-                <th class="col-md-3" st-sort="role_name">Role Name</th>
-                <th class="col-md-6" st-sort="description">Description</th>
-                <th class="col-md-2">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="row in rowCollection">
-                <td>{{$index+1}}</td>
-                <td>{{row.role_name}}</td>
-                <td>{{row.description}}</td>
-                <td>
-                    <button ng-if="row.id_role!=1 && row.id_role!=2" class="btn btn-link btn-xs" ng-click="onClick().edit(true, row)"><i class="fa fa-edit"></i></button>
-                    <button ng-if="row.id_role!=1 && row.id_role!=2" class="btn btn-link btn-xs" ng-click="onClick().delete(row, $index)"><i class="fa fa-trash"></i></button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <br>
-    <button class="btn btn-primary" ng-click="onClick().add(true)">Add</button>
-</div>
-
-<div class="box box-primary" ng-if="state.isAdd">
-    <div class="box-header with-border">
-        <h3 class="box-title">Add</h3>
+<div class="col-md-12">
+    <h1 class="page-header ng-scope">Roles</h1>
+    <div st-safe-src="collection.roleList.data" st-table="rowCollection" ng-hide="state.isAdd || state.isEdit">
+        <table id="tableHead" class="table table-striped panel">
+            <thead>
+                <tr>
+                    <th class="col-md-1">#</th>
+                    <th class="col-md-3" st-sort="role_name">Role Name</th>
+                    <th class="col-md-6" st-sort="description">Description</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in rowCollection">
+                    <td>{{$index+1}}</td>
+                    <td>{{row.role_name}}</td>
+                    <td>{{row.description}}</td>
+                    <td>
+                        <button ng-if="row.id_role!=1 && row.id_role!=2" class="btn btn-link btn-xs" ng-click="onClick().edit(true, row)"><i class="fa fa-edit"></i></button>
+                        <button ng-if="row.id_role!=1 && row.id_role!=2" class="btn btn-link btn-xs" ng-click="onClick().delete(row, $index)"><i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <button class="btn btn-primary" ng-click="onClick().add(true)">Add</button>
     </div>
-    <form name="formAddRole" novalidate="novalidate" accessible-form="" on-submit="onSubmit().add(formAddRole)">
-        <div class="box-body">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Role Name</label>
-                <input type="text" ng-model="var.input.roleName" ng-required="true" class="form-control" placeholder="Role Name" autofocus/>
-                <span class="error-required hidden">Required</span>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Description</label>
-                <textarea class="form-control" ng-model="var.input.description" placeholder="Description"></textarea>
-            </div>
-        </div>
-        <div class="box-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="button" class="btn btn-danger" ng-click="onClick().add(false)">Cancel</button>
-        </div>
-    </form>
-</div>
 
-<div class="box box-primary" ng-if="state.isEdit">
-    <div class="box-header with-border">
-        <h3 class="box-title">Edit</h3>
+    <div class="box box-primary" ng-if="state.isAdd">
+        <div class="box-header with-border">
+            <h3 class="box-title">Add</h3>
+        </div>
+        <form name="formAddRole" novalidate="novalidate" accessible-form="" on-submit="onSubmit().add(formAddRole)">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Role Name</label>
+                    <input type="text" ng-model="var.input.roleName" ng-required="true" class="form-control" placeholder="Role Name" autofocus/>
+                    <span class="error-required hidden">Required</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Description</label>
+                    <textarea class="form-control" ng-model="var.input.description" placeholder="Description"></textarea>
+                </div>
+            </div>
+            <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-danger" ng-click="onClick().add(false)">Cancel</button>
+            </div>
+        </form>
     </div>
-    <form name="formEditRole" novalidate="novalidate" accessible-form="" on-submit="onSubmit().edit(formEditRole)">
-        <div class="box-body">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Role Name</label>
-                <input type="text" ng-model="var.input.roleName" ng-required="true" class="form-control" placeholder="Role Name" autofocus/>
-                <span class="error-required hidden">Required</span>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Description</label>
-                <textarea class="form-control" ng-model="var.input.description" placeholder="Description"></textarea>
-            </div>
+
+    <div class="box box-primary" ng-if="state.isEdit">
+        <div class="box-header with-border">
+            <h3 class="box-title">Edit</h3>
         </div>
-        <div class="box-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="button" class="btn btn-danger" ng-click="onClick().edit(false)">Cancel</button>
-        </div>
-    </form>
+        <form name="formEditRole" novalidate="novalidate" accessible-form="" on-submit="onSubmit().edit(formEditRole)">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Role Name</label>
+                    <input type="text" ng-model="var.input.roleName" ng-required="true" class="form-control" placeholder="Role Name" autofocus/>
+                    <span class="error-required hidden">Required</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Description</label>
+                    <textarea class="form-control" ng-model="var.input.description" placeholder="Description"></textarea>
+                </div>
+            </div>
+            <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-danger" ng-click="onClick().edit(false)">Cancel</button>
+            </div>
+        </form>
+    </div>
 </div>

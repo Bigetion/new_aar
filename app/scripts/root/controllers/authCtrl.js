@@ -48,12 +48,6 @@
                         }
                     });
                 }
-            },
-            logout() {
-                var _this = this;
-                _this.AuthService.logout().then(function(response) {
-                    _this.$location.path('/');
-                });
             }
         }
     });
