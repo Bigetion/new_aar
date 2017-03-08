@@ -37,6 +37,7 @@ html,
 body {
   min-height: 100%;
   font-family: 'Roboto-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #ECF0F5;
 }
 .layout-boxed html,
 .layout-boxed body {

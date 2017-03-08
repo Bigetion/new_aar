@@ -34,7 +34,7 @@
 
                 };
             },
-            submitLogin(myForm) {
+            submitLogin: function(myForm) {
                 var _this = this;
                 if (myForm.$valid) {
                     _this.AuthService.submitLogin(_this.var.username, _this.var.password).then(function(response) {
