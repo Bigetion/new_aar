@@ -37,27 +37,27 @@ html,
 body {
   min-height: 100%;
   font-family: 'Roboto-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: #ECF0F5;
+  background: url('bg/bg.jpg') repeat fixed !important;
 }
 .layout-boxed html,
 .layout-boxed body {
   height: 100%;
 }
-body {
+/*body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Roboto-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   overflow-x: hidden;
   overflow-y: auto;
-  background: #ECF0F5;
-}
+  background: transparent;
+}*/
 /* Layout */
 .wrapper {
   min-height: 100%;
   position: static;
   overflow: hidden;
-  background: #ECF0F5 !important;
+  background: transparent !important;
 }
 .wrapper:before,
 .wrapper:after {
@@ -123,11 +123,11 @@ body {
 .content-wrapper,
 .right-side {
   min-height: 100%;
-  background-color: #ecf0f5;
+  background-color: transparent;
   z-index: 800;
 }
 .main-footer {
-  background:#ECF0F5;
+  background:transparent;
   padding: 15px;
   color: #444;
   border-top: 1px solid #d2d6de;
@@ -206,8 +206,9 @@ a:focus {
 }
 /* Page Header */
 .page-header {
-  margin: 10px 0 20px 0;
-  font-size: 22px;
+  padding: 10px 0;
+  font-size: 25px;
+  border-bottom: 1px dashed #000 !important;
 }
 .page-header > small {
   color: #666;
@@ -1554,7 +1555,10 @@ a:focus {
   border-top: 3px solid #d2d6de;
   margin-bottom: 20px;
   width: 100%;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow:0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)
+}
+.panel {
+  box-shadow:0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12) !important;
 }
 .box.box-primary {
   border-top-color: #3c8dbc;

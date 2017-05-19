@@ -35,7 +35,7 @@
 <body class="hold-transition skin-blue layout-top-nav">
     <div ui-view="login" ng-if="currentState=='login'" class="login-page"></div>
     <div class="wrapper" ng-if="currentState!='login'">
-        <header class="main-header">
+        <!--<header class="main-header">
             <nav class="navbar navbar-static-top">
                 <div class="container">
                     <div class="navbar-header">
@@ -57,20 +57,40 @@
                 </div>
             </nav>
         </header>
-        
+        -->
         <div class="content-wrapper">
-            <div class="container">
+            <div>
                 <section class="content">
-                    <div class="row" ui-view="content"></div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="box box-widget" ng-if="idRole!=2">
+                                <div class="box-body box-profile" style="font-size: 18px">
+                                    <img src="styles/img/aar32.png"> AAR Framework
+                                </div>
+                                <div class="box-footer no-padding">
+                                    <ul class="nav nav-stacked">
+                                        <li class="{{currentState=='main' ? 'active':''}}"><a href="" ui-sref="main()">Modules</a></li>
+                                        <li class="{{currentState=='roles' ? 'active':''}}"><a href="" ui-sref="roles()">Roles</a></li>
+                                        <li class="{{currentState=='permissions' ? 'active':''}}"><a href="" ui-sref="permissions()">Permissions</a></li>
+                                        <li class="{{currentState=='users' ? 'active':''}}"><a href="" ui-sref="users()">Users</a></li>
+                                        <li ng-click="onLoad().logout()"><a>Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="row" ui-view="content"></div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
-        <footer class="main-footer">
+        <!--<footer class="main-footer">
             <div class="pull-right hidden-xs">
                 <b>Version</b> 2.3.0
             </div>
             <strong>Copyright © 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
-        </footer>
+        </footer>-->
     </div>
 
     <!-- build:js(.) scripts/vendor.js -->
